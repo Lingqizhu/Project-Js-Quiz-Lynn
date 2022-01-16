@@ -43,7 +43,7 @@ body{
 }
 button{
   color: white;
-  width: 50%;
+  width: 100%;
   padding: 0.75rem;
   background: repeating-linear-gradient(
       90deg,
@@ -60,10 +60,15 @@ button:hover{
 color:rgb(243, 190, 16);
 transform: scale(1.05);
 }
-
+h1{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
 h2{
   padding:1rem;
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 ul{
@@ -71,14 +76,14 @@ ul{
   padding: 0;
 }
 li{
-  font-size: 1.2rem;
-  margin: 1rem 0;
+  float:left;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+
 }
 label{
   cursor: pointer;
 }
-
-
 #title{
   margin-top:0px;
   font-weight:20px;
@@ -91,21 +96,12 @@ p{
   color:rgb(243, 190, 16)
 }
 #header-img{
-  width: 500px;
+  width: 600px;
+  height: 300px;
 }
 
-#results{
-  font-weight:80px;
-  font-size:40px;
-  text-align: center;
-}
 
-form{
-  background-color: rgba(20, 17, 20, 0.8);
-  border-radius: 0.55rem;
-  padding: 30px;
-  margin-top: 20px;
-}
+
 
 
 

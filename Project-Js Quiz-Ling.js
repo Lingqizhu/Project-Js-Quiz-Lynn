@@ -85,16 +85,15 @@ submitBtn.addEventListener('click',()=>{
     currentQuiz++
     if(currentQuiz<quizData.length){
       loadQuiz()
-    }else {
-      quiz.innerHTML = score
-
-
-
+    }else if (score = 5) {
+      msg = "Excellent";
+    } else if (score >= 3) {
+      msg = "good";
+    } else {
+      msg = "ok...";
     }
 
-
-
-
+    quiz.innerHTML = msg
   }
 })
 
