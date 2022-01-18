@@ -8,35 +8,114 @@
 
 </head>
 <body>
-    <div class="container" id="quiz">
-        <div class="quiz-header">
-            <h1 id="title">Earth, Sun, and Moon Trivia</h1>
+<div class="container">
+    <!--head-->
+        <header id="intro" class="justify-content-center mx-auto">
+            <h1 id="title" calss="text-center"><strong>Earth, Sun, and Moon Trivia</strong></h1>
             <p>Answer the questions to find out <br>how do you konw about Earth, Sun and Moon</p>
+            <input id="button" type="button" value="Start Quiz"  onclick="startQuiz()"/>
+        </header>
+        <div class="row justify-content-center">
+   <!--picture-->
             <div class="text-center justify-content-center mx-auto" id="col1" >
-                <img  id="header-img" src="https://images.unsplash.com/photo-1570585703502-1375b93e7a97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHRlZW5hZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+               <img  id="header-img" src="https://images.unsplash.com/photo-1570585703502-1375b93e7a97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHRlZW5hZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
             </div>
-                <h2 id="question">Question Text</h2>
-                <ul>
-                    <li>
-                        <input type="radio" name="answer" id="a" class="answer">
-                        <label for="a" id="a_text" >Answer</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="answer" id="b" class="answer">
-                        <label for="b" id="b_text" >Answer</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="answer" id="c" class="answer">
-                        <label for="c" id="c_text" >Answer</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="answer" id="d" class="answer">
-                        <label for="d" id="d_text" >Answer</label>
-                    </li>
-                </ul>
-                <button id="submit">submit</button>
+
         </div>
+  <form id="quizform">
+    <!--question1-->
+            <div class="row justify-content-center" >
+                <div id="question1">
+                    <p>1.How long does it take sunlight to reach the Earth?</p>
+                    <label for="a1" class="text-center">
+                        <input class="quiz1" type="radio"  name="quest1" value=4 id="a1"> A 8 minutes</label><br>
+                    <label for="a2" >
+                        <input class="quiz1" type="radio"  name="quest1" value=3 id="a2"> B 1 minutes</label><br>
+                    <label for="a3" >
+                        <input class="quiz1" type="radio"  name="quest1" value=1 id="a3"> C 36 minutes</label><br>
+                    <label for="a4" >
+                        <input class="quiz1" type="radio"  name="quest1" value=0 id="a4"> D 15 seconds</label><br>
+                    <div class="row justify-content-center">
+                        <input id="button" type="button" value="Next" class="btn btn-success mx-auto" onclick="question2()"/>
+                    </div>
+                </div>
+                <br>
+            </div>
+   <!--question2-->
+        <div class="row justify-content-center" id="question2">
+        <div id="question2">
+            <p>2.How fast does the Earth move in its orbit about the sun?</p>
+            <label for="a1" class="text-center">
+                <input class="quiz2" type="radio"  name="quest2" value=3 id="a1"> A 18 miles per minute</label><br>
+            <label for="a2" >
+                <input class="quiz2" type="radio"  name="quest2" value=1 id="a2"> B 18 miles per second</label><br>
+            <label for="a3" >
+                <input class="quiz2" type="radio"  name="quest2" value=5 id="a3"> C 18 miles per hour</label><br>
+            <label for="a4" >
+                <input class="quiz2" type="radio"  name="quest2" value=0 id="a4"> D 18 miles per day</label><br>
+        </div>
+        <div class="row justify-content-center">
+            <input id="button" type="button" value="Next" class="btn btn-success mx-auto" onclick="question3()"/>
+        </div>
+        </div>
+   <!--question3-->
+   <div class="row justify-content-center" id="question3">
+     <div id="question3">
+      <p>3.The Moon's density is what percentage of the Earth's?</p>
+        <label  for="a1" class="text-center">
+            <input class="quiz3" type="radio"  name="quest3" value=1 id="a1"> A 60%</label><br>
+        <label for="a2">
+            <input class="quiz3" type="radio"  name="quest3" value=0 id="a2"> B 30%</label><br>
+        <label for="a3">
+            <input class="quiz3" type="radio"  name="quest3" value=0 id="a3"> C 90%</label><br>
+        <label for="a4">
+            <input class="quiz3" type="radio"  name="quest3" value=0 id="a4"> D 1%</label><br>
+     </div>
+     <div class="row justify-content-center">
+        <input id="button" type="button" value="Next" class="btn btn-success mx-auto" onclick="question4()"/>
+     </div>
     </div>
+   <!--question4-->
+    <div class="row justify-content-center" id="question4">
+     <div id="question4">
+        <p>4.what region of the Earth experience the least seasonal variation</p>
+        <label for="a1" class="text-center">
+            <input class="quiz4" type="radio"  name="quest4" value=0 id="a1"> A north of the equator</label><br>
+        <label for="a2">
+            <input class="quiz4" type="radio"  name="quest4" value=0 id="a2"> B south of the equator</label><br>
+        <label for="a3">
+            <input class="quiz4" type="radio"  name="quest4" value=1 id="a3"> C the equatorial region</label><br>
+     </div>
+     <div class="row justify-content-center">
+        <input id="button" type="button" value="Next" class="btn btn-success mx-auto" onclick="question5()"/>
+     </div>
+    </div>
+   <!--question5-->
+   <div class="row justify-content-center" id="question5">
+    <div id="question5">
+        <p>5.What is the brightest star in the sky(excluding our Sun and novas)?</p>
+        <label for="a1" class="text-center">
+            <input class="quiz5" type="radio"  name="quest5" value=0 id="a1"> A Vega</label><br>
+        <label for="a2">
+            <input class="quiz5" type="radio"  name="quest5" value=1 id="a2"> B Sirius</label><br>
+        <label for="a3">
+            <input class="quiz5" type="radio"  name="quest5" value=0 id="a3"> C Canopus</label><br>
+    </div>
+     <div class="row justify-content-center">
+        <input id="button" type="button" value="Result" class="btn btn-success mx-auto" onclick="results()"/>
+     </div>
+    </div>
+ <!--Results-->
+ <p></p>
+
+ <div id="results" class="row justify-content-center">
+    <h2 class="text-center">Your Result</h2>
+    <br>
+    <p  class="text-center" id="result"></p>
+  </div>
+  </form>
+
+</div>
 
 <script src="Project-Js Quiz-Ling.js" type="text/javascript"></script>
 </body>

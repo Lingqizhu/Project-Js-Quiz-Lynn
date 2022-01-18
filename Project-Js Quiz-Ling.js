@@ -1,102 +1,116 @@
-const quizData=[
-  {
-    question:"1.How long does it take sunlight to reach the Earth?",
-    a: "A 8 minutes",
-    b: "B 1 minutes",
-    c: "C 36 minutes",
-    d: "D 15 seconds",
-    correct:"a",
-  },
-  {
-    question:"2.How fast does the Earth move in its orbit about the sun?",
-    a: "A 18 miles per minute",
-    b: "B 18 miles per second",
-    c: "C 18 miles per hour",
-    d: "D 18 miles per day",
-    correct:"b",
-  },
-  {
-    question:"3.The Moon's density is what percentage of the Earth's?",
-    a: "A 60%",
-    b: "B 30%",
-    c: "C 90%",
-    d: "D 1%",
-    correct:"a",
-  },
-  {
-    question:"4.what region of the Earth experience the least seasonal variation?",
-    a: "A north of the equator",
-    b: "B south of the equator",
-    c: "C the equatorial region",
-    correct:"a",
-  },
-  {
-    question:"5.What is the brightest star in the sky(excluding our Sun and novas)?",
-    a: "A Veg",
-    b: "B Sirius",
-    c: "C Canopus",
-    correct:"b",
-  },
-];
-
-const quiz = document.getElementById('quiz')
-const answerEls = document.querySelectorAll('.answer')
-const questionEl = document.getElementById('question')
-const a_text = document.getElementById('a_text')
-const b_text = document.getElementById('b_text')
-const c_text = document.getElementById('c_text')
-const d_text = document.getElementById('d_text')
-const submitBtn = document.getElementById('submit')
-
-let currentQuiz = 0
-let score = 0
-
-loadQuiz()
-function loadQuiz(){
-  deselectAnswers()
-  const currentQuizData = quizData[currentQuiz]
-  questionEl.innerText = currentQuizData.question
-  a_text.innerText = currentQuizData.a
-  b_text.innerText = currentQuizData.b
-  c_text.innerText = currentQuizData.c
-  d_text.innerText = currentQuizData.d
+window.onload = function() {
+  document.getElementById("question1").style.display = 'none';
+  document.getElementById("question2").style.display = 'none';
+  document.getElementById("question3").style.display = 'none';
+  document.getElementById("question4").style.display = 'none';
+  document.getElementById("question5").style.display = 'none';
+  document.getElementById("results").style.display = 'none';
 }
 
-function deselectAnswers(){
-  answerEls.forEach(answerEl =>answerEl.checked = false)
+/**
+* hides intro and show question 1
+*/
+function startQuiz() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("question1").style.display = "inline-block";
 }
 
-function getSelected(){
-  let answer
-  answerEls.forEach(answerEl =>{
-    if(answerEl.checked){
-      answer = answerEl.id
-    }
-  })
-  return answer;
+/**
+ * hides question 1 shows question2
+ */
+function question2() {
+  document.getElementById("question1").style.display = "none";
+  document.getElementById("question2").style.display = "inline-block";
+}
+ /**
+ * hides question2 shows question3
+ */
+function question3() {
+  document.getElementById("question2").style.display = "none";
+  document.getElementById("question3").style.display = "inline-block";
+}
+ /**
+ * hides question 3 shows question4
+ */
+function question4() {
+  document.getElementById("question3").style.display = "none";
+  document.getElementById("question4").style.display = "inline-block";
+}
+ /**
+ * hides question 4 shows question5
+ */
+function question5() {
+  document.getElementById("question4").style.display = "none";
+  document.getElementById("question5").style.display = "inline-block";
 }
 
-submitBtn.addEventListener('click',()=>{
-  const answer = getSelected()
-  if(answer){
-    if(answer === quizData[currentQuiz].correct){
-      score++
-    }
-    currentQuiz++
-    if(currentQuiz<quizData.length){
-      loadQuiz()
-    }else if (score = 5) {
-      msg = "Excellent";
-    } else if (score >= 3) {
-      msg = "good";
-    } else {
-      msg = "ok...";
-    }
+/**
+ * hides question 5 shows results
+ */
+function results() {
+  calculateResults()
+  document.getElementById("question5").style.display = "none";
+  document.getElementById("results").style.display = "inline-block";
 
-    quiz.innerHTML = msg
+}
+
+
+function calculateResults() {
+  const radios1 = document.querySelectorAll('input[name="quest1"]');
+  let q1Value;
+  for (const rb of radios1) {
+      if (rb.checked) {
+          q1Value = rb.value;
+          break;
+      }
   }
-})
 
+  const radios2 = document.querySelectorAll('input[name="quest2"]');
+  let q2Value;
+  for (const rb of radios2) {
+      if (rb.checked) {
+          q2Value = rb.value;
+          break;
+      }
+  }
+  const radios3 = document.querySelectorAll('input[name="quest3"]');
+  let q3Value;
+  for (const rb of radios3) {
+      if (rb.checked) {
+          q3Value = rb.value;
+          break;
+      }
+  }
+  const radios4 = document.querySelectorAll('input[name="quest4"]');
+  let q4Value;
+  for (const rb of radios4) {
+      if (rb.checked) {
+          q4Value = rb.value;
+          break;
+      }
+  }
+  const radios5 = document.querySelectorAll('input[name="quest5"]');
+  let q5Value;
+  for (const rb of radios5) {
+      if (rb.checked) {
+          q5Value = rb.value;
+          break;
+      }
+  }
+
+  let total = Number(q1Value) + Number(q2Value)+ Number(q3Value)+ Number(q4Value)+ Number(q5Value);
+
+  if (total == 5) {
+    msg = "Excellent";
+  } else if (total >= 3) {
+    msg = "good";
+  } else {
+    msg = "ok...";
+  }
+
+  document.getElementById("result").innerHTML = msg
+
+}
 
 
 

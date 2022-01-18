@@ -29,21 +29,9 @@ body{
   color:rgb(243, 245, 247);
   margin: 0px;
 }
-.container{
-  width: 80vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin:0;
-  background-color: #293036;
-  overflow: hidden;
-}
-.quiz-header{
-  padding:4rem;
-}
-button{
-  color: white;
-  width: 100%;
+
+#button{
+  width: 55%;
   padding: 0.75rem;
   background: repeating-linear-gradient(
       90deg,
@@ -55,39 +43,21 @@ button{
   border-radius: 8px;
   cursor: pointer;
   font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
-button:hover{
-color:rgb(243, 190, 16);
-transform: scale(1.05);
-}
-h1{
+#button:hover{
+  color:rgb(243, 190, 16);
+  transform: scale(1.15);
+  }
+header{
+  padding:60px;
   text-align: center;
-}
-p{
-  text-align: center;
-}
-h2{
-  padding:1rem;
-  text-align: left;
-  margin: 0;
-}
-ul{
-  list-style-type: none;
-  padding: 0;
-}
-li{
-  float:left;
-  padding: 0.5rem;
-  font-size: 1.8rem;
-
-}
-label{
-  cursor: pointer;
 }
 #title{
-  margin-top:0px;
+  margin-top:40px;
   font-weight:20px;
-  font-size:40px;
+  font-size:60px;
   color:rgb(243, 190, 16)
 }
 p{
@@ -97,12 +67,38 @@ p{
 }
 #header-img{
   width: 600px;
-  height: 300px;
 }
 
+#results{
+  font-weight:80px;
+  font-size:40px;
+  text-align: center;
+}
+.container{
+  width:100%;
+  margin:3.125rem auto 0 auto;
+  background-color: #293036;
+}
 
-
-
-
-
-
+form{
+  background-color: rgba(20, 17, 20, 0.8);
+  border-radius: 0.55rem;
+  padding: 30px;
+  margin-top: 20px;
+}
+#question2
+{
+  padding-left: 30px;
+}
+#question3
+{
+  padding-left: 30px;
+}
+#question4
+{
+  padding-left: 30px;
+}
+#question5
+{
+  padding-left: 30px;
+}
